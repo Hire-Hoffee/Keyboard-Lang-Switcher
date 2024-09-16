@@ -11,7 +11,6 @@ first_to_second = json.loads(json_file.read_text())
 second_to_first = {v: k for k, v in first_to_second.items()}
 
 
-# Function for text transformation depending on the keyboard layout
 def replace_text(text, layout):
     if layout == settings.LANGUAGES[0]:
         return "".join(first_to_second.get(char, char) for char in text)
@@ -21,7 +20,6 @@ def replace_text(text, layout):
         return text
 
 
-# Function to get the current keyboard layout
 def get_current_layout():
     result = subprocess.run(
         ["gsettings", "get", "org.gnome.desktop.input-sources", "mru-sources"],
