@@ -22,7 +22,7 @@ def on_press(key):
             ):
                 copy_paste()
 
-                # Сброс значений
+                # Reset the state of the double press
                 last_key = None
                 last_time = 0
             else:
