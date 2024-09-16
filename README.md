@@ -31,15 +31,20 @@ pip install pynput pyperclip
 2. If you want, update the `settings.py` file with your desired settings:
    - `DOUBLE_PRESS_INTERVAL`: Maximum time between presses for a double press (in seconds).
    - `DOUBLE_PRESS_KEY`: Key used for triggering the conversion (e.g., "shift").
-   - `CLEAR_CLIPBOARD_DELAY`: Delay before clearing the clipboard after pasting (in seconds).
+   - `CLIPBOARD_DELAY`: Delay before manipulating with the clipboard (in seconds).
    - `LANGUAGES`: List of supported keyboard layouts (e.g., ["us", "ru"]).
    - `DICTIONARY_PATH`: Path to the JSON file containing the character mapping dictionary.
+   - `KEYBOARD_SHORTCUTS`
+     - `COPY_KEYS`: Shortcut for copying on your keyboard.
+     - `PASTE_KEYS`: Shortcut for pasting on your keyboard.
+     - `CHANGE_LAYOUT_KEYS`: Shortcut for changing language on your keyboard.
+     - `COPY_LAST_WORD_KEYS`: Shortcut to select the last typed word on your keyboard.
 3. If you want, update a JSON file named `dictionary.json` in the project root directory. This file should contain a dictionary mapping characters between the two keyboard layouts.
 
 ## Usage
 
 1. Run the `python3 src/index.py` command (you can run the script on the background by `nohup python3 src/index.py`).
-2. Select the text you want to convert.
+2. Select the text you want to convert (if not selected, the last typed word will be converted).
 3. Double-press the `Shift` key (or your configured hotkey).
 4. The converted text will be pasted in place of the selected text.
 

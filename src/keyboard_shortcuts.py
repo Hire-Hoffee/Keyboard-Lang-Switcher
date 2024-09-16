@@ -1,36 +1,40 @@
 from pynput import keyboard
 from pynput.keyboard import Controller
+import settings
 
 keyboard_controller = Controller()
 
 
+# Press and release keys based on configuration
+def press_keys(keys):
+    for key in keys:
+        if hasattr(keyboard.Key, key):
+            key_to_press = getattr(keyboard.Key, key)
+            keyboard_controller.press(key_to_press)
+        else:
+            keyboard_controller.press(key)
+
+    for key in reversed(keys):
+        if hasattr(keyboard.Key, key):
+            key_to_press = getattr(keyboard.Key, key)
+            keyboard_controller.release(key_to_press)
+        else:
+            keyboard_controller.release(key)
+
+
+# Action functions
 def copy():
-    keyboard_controller.press(keyboard.Key.ctrl)
-    keyboard_controller.press("c")
-    keyboard_controller.release("c")
-    keyboard_controller.release(keyboard.Key.ctrl)
+    press_keys(settings.COPY_KEYS)
 
 
 def paste():
-    keyboard_controller.press(keyboard.Key.ctrl)
-    keyboard_controller.press("v")
-    keyboard_controller.release("v")
-    keyboard_controller.release(keyboard.Key.ctrl)
+    press_keys(settings.PASTE_KEYS)
 
 
 def change_layout():
-    keyboard_controller.press(keyboard.Key.cmd)
-    keyboard_controller.press(keyboard.Key.space)
-    keyboard_controller.release(keyboard.Key.space)
-    keyboard_controller.release(keyboard.Key.cmd)
+    press_keys(settings.CHANGE_LAYOUT_KEYS)
 
 
 def copy_last_word():
-    keyboard_controller.press(keyboard.Key.ctrl)
-    keyboard_controller.press(keyboard.Key.shift_r)
-    keyboard_controller.press(keyboard.Key.left)
-    keyboard_controller.release(keyboard.Key.left)
-    keyboard_controller.release(keyboard.Key.shift_r)
-    keyboard_controller.release(keyboard.Key.ctrl)
-
-    copy()
+    press_keys(settings.COPY_LAST_WORD_KEYS)
+    press_keys(settings.COPY_KEYS)
