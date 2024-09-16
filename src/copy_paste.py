@@ -1,7 +1,7 @@
 import time
 import pyperclip
 from text_convert import get_current_layout, replace_text
-from keyboard_shortcuts import copy, paste
+from keyboard_shortcuts import copy, paste, change_layout
 import settings
 
 
@@ -21,6 +21,9 @@ def copy_paste():
 
     # Simulate Ctrl+V press to paste
     paste()
+
+    # Change the keyboard layout
+    change_layout()
 
     # Small delay before clearing the clipboard
     time.sleep(settings.CLEAR_CLIPBOARD_DELAY)

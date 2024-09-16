@@ -16,3 +16,10 @@ def paste():
     keyboard_controller.press("v")
     keyboard_controller.release("v")
     keyboard_controller.release(keyboard.Key.ctrl)
+
+
+def change_layout():
+    keyboard_controller.press(keyboard.Key.cmd)
+    keyboard_controller.press(keyboard.Key.space)
+    keyboard_controller.release(keyboard.Key.space)
+    keyboard_controller.release(keyboard.Key.cmd)
