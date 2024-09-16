@@ -5,7 +5,7 @@ LANGUAGES = ["us", "ru"]  # Available languages
 DICTIONARY_PATH = "dictionary.json"  # Path to the language dictionary
 
 # Shortcuts for your keyboard
-COPY_KEYS = ["ctrl", "c"]
-PASTE_KEYS = ["ctrl", "v"]
-CHANGE_LAYOUT_KEYS = ["cmd", "space"]
-COPY_LAST_WORD_KEYS = ["ctrl", "shift_r", "left"]
+COPY_KEYS = ["ctrl", "c"]  # For copying
+PASTE_KEYS = ["ctrl", "v"]  # For pasting
+CHANGE_LAYOUT_KEYS = ["cmd", "space"]  # For changing the keyboard layout
+COPY_LAST_WORD_KEYS = ["ctrl", "shift_r", "left"]  # For selecting the last typed word
