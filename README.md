@@ -32,6 +32,28 @@ The script uses the `pynput` library to listen for keyboard events. When a doubl
 
 ## Additionally
 
-- If you use virtual environment and script do not run, you can try this command `./venv/bin/python src/index.py`
-- Maybe you need to install additional apt packages (check your terminal)
-- You can create standalone executable witch `pyinstaller -F -n=KeyboardLangSwitcher src/index.py` command. File will be located on dist directory
+- If you use virtual environment and script do not run, you can try this command `./venv/bin/python src/index.py`.
+- Maybe you need to install additional apt packages (check your terminal).
+- You can create standalone executable with `pyinstaller -F -n=KeyboardLangSwitcher src/index.py` command. File will be located on dist directory.
+
+## Systemctl service
+
+You can create systemctl service to run this script on the background forever.
+
+1. Create `keyboard-lang-switch.service` in `~/.config/systemd/user/` directory
+2. Add this code to file with your path to execute script or standalone file
+
+```
+[Unit]
+Description=Keyboard language switcher
+
+[Service]
+ExecStart=/bin/bash -c "<path to executable>"
+
+[Install]
+WantedBy=multi-user.target
+```
+
+3. Enable the service to start automatically when you log in `sudo systemctl --user enable keyboard-lang-switch.service`.
+4. Start the service `sudo systemctl --user start keyboard-lang-switch.service`.
+5. Verify that the service is running `sudo systemctl --user status keyboard-lang-switch.service`.
