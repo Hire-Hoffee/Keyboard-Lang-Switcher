@@ -19,10 +19,10 @@ This Python script allows you to quickly convert the keyboard layout of selected
 
 You can install the required libraries using pip:
 
-- (Optional) Create and activate virtual environment with `python3 -m venv venv` and `source venv/bin/activate` commands)
+- (Optional: Create and activate virtual environment with `python3 -m venv venv` and `source venv/bin/activate` commands)
 
 ```bash
-pip install pynput pyperclip
+pip install -r requirements.txt
 ```
 
 ## Installation
