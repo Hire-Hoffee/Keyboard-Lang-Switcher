@@ -1,6 +1,6 @@
 from pynput import keyboard
 from pynput.keyboard import Controller
-import settings
+import settings.settings as settings
 
 keyboard_controller = Controller()
 

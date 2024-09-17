@@ -1,7 +1,7 @@
 import time
 from pynput import keyboard
 from copy_paste import copy_paste
-import settings
+import settings.settings as settings
 
 # Variables to track the state of double press
 last_key = None

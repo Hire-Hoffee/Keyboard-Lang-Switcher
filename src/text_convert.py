@@ -1,13 +1,9 @@
 import subprocess
 import ast
-from pathlib import Path
-import json
-import settings
+import settings.settings as settings
+from settings.dictionary import langs
 
-# Dictionaries for text transformation depending on the keyboard layout
-json_file = Path(settings.DICTIONARY_PATH)
-
-first_to_second = json.loads(json_file.read_text())
+first_to_second = langs
 second_to_first = {v: k for k, v in first_to_second.items()}
 
 

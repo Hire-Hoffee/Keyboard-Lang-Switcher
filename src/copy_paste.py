@@ -7,7 +7,7 @@ from keyboard_shortcuts import (
     change_layout,
     copy_last_word,
 )
-import settings
+import settings.settings as settings
 
 get_clipboard_data = pyperclip.paste
 set_to_clipboard = pyperclip.copy
