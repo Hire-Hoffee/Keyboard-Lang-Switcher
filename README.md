@@ -16,8 +16,8 @@ This Python script allows you to quickly convert the keyboard layout of selected
 1. Clone the repository or download the source code.
 2. (Optional: Create and activate virtual environment with `python3 -m venv venv` and `source venv/bin/activate` commands)
 3. Install the required libraries using pip `pip install -r requirements.txt`.
-4. Optional: update the `settings.py` file with your desired settings.
-5. Optional: update a JSON file named `dictionary.json` in the project root directory. This file should contain a dictionary mapping characters between the two keyboard layouts.
+4. Optional: update the `src/settings/settings.py` file with your desired settings.
+5. Optional: update a file `src/settings/dictionary.py` with your language. This file should contain a dictionary mapping characters between the two keyboard layouts.
 
 ## Usage
 
