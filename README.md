@@ -13,13 +13,8 @@ This Python script allows you to quickly convert the keyboard layout of selected
 
 ## Requirements
 
-- Python 3
-- `pynput` library
-- `pyperclip` library
-
-You can install the required libraries using pip:
-
 - (Optional: Create and activate virtual environment with `python3 -m venv venv` and `source venv/bin/activate` commands)
+- You can install the required libraries using pip:
 
 ```bash
 pip install -r requirements.txt
